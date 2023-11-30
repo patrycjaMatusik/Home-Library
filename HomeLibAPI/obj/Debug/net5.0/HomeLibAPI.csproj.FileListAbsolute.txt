@@ -69,3 +69,9 @@ C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\ref\HomeLibAPI.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.pdb
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.genruntimeconfig.cache
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\AutoMapper.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

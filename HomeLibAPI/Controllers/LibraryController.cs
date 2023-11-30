@@ -1,4 +1,5 @@
-﻿using HomeLibraryAPI.Entities;
+﻿using HomeLibAPI.Services;
+using HomeLibraryAPI.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,9 +13,11 @@ namespace HomeLibAPI.Controllers
     public class LibraryController : ControllerBase
     {
         private readonly HomeLibraryDbContext _dbContext;
-        public LibraryController(HomeLibraryDbContext dbContext)
+        private readonly ILibraryElementService _libraryElementService;
+        public LibraryController(HomeLibraryDbContext dbContext, ILibraryElementService libraryElementService)
         {
             _dbContext = dbContext;
+            _libraryElementService = libraryElementService;
         }
 
         [HttpGet]
@@ -24,8 +27,6 @@ namespace HomeLibAPI.Controllers
                 .Books
                 .Include(r => r.Author)
                 .Include(r => r.Publisher)
-                .Include(r => r.Keywords)
-                .ThenInclude(r => r.Name)
                 .ToList();
             return Ok(books);
         }
@@ -33,7 +34,11 @@ namespace HomeLibAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<Book>> Get([FromRoute] int id)
         {
-            var book = _dbContext.Books.FirstOrDefault(r => r.Id == id);
+            var book = _dbContext
+                .Books
+                .Include(r => r.Author)
+                .Include(r => r.Publisher)
+                .FirstOrDefault(r => r.Id == id);
 
             if(book is null)
             {

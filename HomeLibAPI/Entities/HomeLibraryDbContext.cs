@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HomeLibAPI.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace HomeLibraryAPI.Entities
 {
@@ -11,12 +12,23 @@ namespace HomeLibraryAPI.Entities
         public DbSet<Book> Books { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
         public DbSet<Multimedia> Multimedias { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>().ToTable("Books");
             modelBuilder.Entity<Magazine>().ToTable("Magazines");
             modelBuilder.Entity<Multimedia>().ToTable("Multimedias");
+
+            modelBuilder.Entity<User>()
+                .Property(u => u.Email)
+                .IsRequired();
+
+            modelBuilder.Entity<Role>()
+                .Property(r => r.Name)
+                .IsRequired();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

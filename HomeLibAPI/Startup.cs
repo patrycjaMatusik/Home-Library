@@ -1,3 +1,4 @@
+using HomeLibAPI.Services;
 using HomeLibraryAPI;
 using HomeLibraryAPI.Entities;
 using Microsoft.AspNetCore.Builder;
@@ -28,6 +29,8 @@ namespace HomeLibAPI
             services.AddControllersWithViews();
             services.AddDbContext<HomeLibraryDbContext>();
             services.AddScoped<DataSeeder>();
+            services.AddScoped<ILibraryElementService, LibraryElementService>();
+            services.AddScoped<IAccountService, AccountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
