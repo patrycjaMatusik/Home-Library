@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace HomeLibAPI.Exceptions
 {
-    public class NotFoundException
+    public class NotFoundException : Exception
     {
+        public NotFoundException(string message) : base(message)
+        {
+
+        }
     }
 }

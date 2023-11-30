@@ -1,5 +1,6 @@
 ﻿using HomeLibAPI.Models;
 using HomeLibAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace HomeLibAPI.Controllers
         {
             _accountService = accountService;
         }
+
         [HttpPost("register")]
         public ActionResult RegisterUser([FromBody] RegisterUserDto dto)
         {
@@ -25,11 +27,20 @@ namespace HomeLibAPI.Controllers
             return Ok();
         }
 
-        /*[HttpPost("login")]
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete([FromRoute] int id)
+        {
+            _accountService.DeleteUser(id);
+
+            return NoContent();
+        }
+
+        [HttpPost("login")]
         public ActionResult Login([FromBody] LoginDto dto)
         {
             string token = _accountService.GenerateJwt(dto);
             return Ok(token);
-        }*/
+        }
     }
 }

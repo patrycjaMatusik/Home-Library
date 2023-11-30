@@ -4,14 +4,16 @@ using HomeLibraryAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HomeLibAPI.Migrations
 {
     [DbContext(typeof(HomeLibraryDbContext))]
-    partial class HomeLibraryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231130205830_UserDeleteProperties")]
+    partial class UserDeleteProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

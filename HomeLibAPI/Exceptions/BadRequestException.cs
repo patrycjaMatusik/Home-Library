@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace HomeLibAPI.Exceptions
 {
-    public class BadRequestException
+    public class BadRequestException : Exception
     {
+        public BadRequestException(string message) : base(message)
+        {
+
+        }
     }
 }

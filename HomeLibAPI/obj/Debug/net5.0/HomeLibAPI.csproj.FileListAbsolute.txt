@@ -23,7 +23,6 @@ C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -75,3 +74,8 @@ C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyI
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\FluentValidation.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.MvcApplicationPartsAssemblyInfo.cs
