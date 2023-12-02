@@ -9,6 +9,7 @@ using HomeLibraryAPI.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace HomeLibAPI
 {
@@ -59,6 +61,7 @@ namespace HomeLibAPI
             services.AddControllersWithViews().AddFluentValidation();
             services.AddDbContext<HomeLibraryDbContext>();
             services.AddScoped<DataSeeder>();
+            services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<ILibraryElementService, LibraryElementService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();

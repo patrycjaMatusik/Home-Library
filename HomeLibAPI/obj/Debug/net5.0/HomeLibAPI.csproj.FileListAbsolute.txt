@@ -54,7 +54,6 @@ C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.TagHelpers.input.cach
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.TagHelpers.output.cache
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.RazorCoreGenerate.cache
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -79,3 +78,4 @@ C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs

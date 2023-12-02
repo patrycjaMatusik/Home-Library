@@ -171,7 +171,7 @@ namespace HomeLibraryAPI
                         new Keyword() { Name = "spokój"},
                         new Keyword() { Name = "melodyjność"}
                     },
-                    RecordLabel = new RecordLabel()
+                    Publisher = new Publisher()
                     {
                         Name = "Sony Music Entertainment"
                     },

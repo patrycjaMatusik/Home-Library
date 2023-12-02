@@ -8,7 +8,8 @@ namespace HomeLibraryAPI.Entities
         private string _connectionString = "Server=localhost;Database=HomeLibraryDb;Trusted_Connection=True;";
         public DbSet<Author> Authors { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
-        public DbSet<RecordLabel> RecordLabels { get; set; }
+        public DbSet<LibraryElement> LibraryElement { get; set; }
+        public DbSet<Keyword> Keyword { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
         public DbSet<Multimedia> Multimedias { get; set; }

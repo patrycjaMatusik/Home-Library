@@ -4,14 +4,16 @@ using HomeLibraryAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HomeLibAPI.Migrations
 {
     [DbContext(typeof(HomeLibraryDbContext))]
-    partial class HomeLibraryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231202150031_deleteRecordLabel")]
+    partial class deleteRecordLabel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,17 +116,12 @@ namespace HomeLibAPI.Migrations
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("PublisherId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
-
-                    b.HasIndex("PublisherId");
 
                     b.ToTable("LibraryElement");
                 });
@@ -142,6 +139,21 @@ namespace HomeLibAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Publishers");
+                });
+
+            modelBuilder.Entity("HomeLibraryAPI.Entities.RecordLabel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RecordLabels");
                 });
 
             modelBuilder.Entity("KeywordLibraryElement", b =>
@@ -169,8 +181,13 @@ namespace HomeLibAPI.Migrations
                     b.Property<int>("NumberOfPages")
                         .HasColumnType("int");
 
+                    b.Property<int>("PublisherId")
+                        .HasColumnType("int");
+
                     b.Property<string>("TableOfContents")
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasIndex("PublisherId");
 
                     b.ToTable("Books");
                 });
@@ -185,8 +202,13 @@ namespace HomeLibAPI.Migrations
                     b.Property<int>("NumberOfPages")
                         .HasColumnType("int");
 
+                    b.Property<int>("PublisherId")
+                        .HasColumnType("int");
+
                     b.Property<string>("TableOfContents")
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasIndex("PublisherId");
 
                     b.ToTable("Magazines");
                 });
@@ -198,8 +220,13 @@ namespace HomeLibAPI.Migrations
                     b.Property<TimeSpan>("Duration")
                         .HasColumnType("time");
 
+                    b.Property<int>("PublisherId")
+                        .HasColumnType("int");
+
                     b.Property<string>("RecordsList")
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasIndex("PublisherId");
 
                     b.ToTable("Multimedias");
                 });
@@ -223,15 +250,7 @@ namespace HomeLibAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HomeLibraryAPI.Entities.Publisher", "Publisher")
-                        .WithMany()
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Author");
-
-                    b.Navigation("Publisher");
                 });
 
             modelBuilder.Entity("KeywordLibraryElement", b =>
@@ -256,6 +275,14 @@ namespace HomeLibAPI.Migrations
                         .HasForeignKey("HomeLibraryAPI.Entities.Book", "Id")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
+
+                    b.HasOne("HomeLibraryAPI.Entities.Publisher", "Publisher")
+                        .WithMany()
+                        .HasForeignKey("PublisherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Publisher");
                 });
 
             modelBuilder.Entity("HomeLibraryAPI.Entities.Magazine", b =>
@@ -265,6 +292,14 @@ namespace HomeLibAPI.Migrations
                         .HasForeignKey("HomeLibraryAPI.Entities.Magazine", "Id")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
+
+                    b.HasOne("HomeLibraryAPI.Entities.Publisher", "Publisher")
+                        .WithMany()
+                        .HasForeignKey("PublisherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Publisher");
                 });
 
             modelBuilder.Entity("HomeLibraryAPI.Entities.Multimedia", b =>
@@ -274,6 +309,14 @@ namespace HomeLibAPI.Migrations
                         .HasForeignKey("HomeLibraryAPI.Entities.Multimedia", "Id")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
+
+                    b.HasOne("HomeLibraryAPI.Entities.Publisher", "Publisher")
+                        .WithMany()
+                        .HasForeignKey("PublisherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Publisher");
                 });
 #pragma warning restore 612, 618
         }
