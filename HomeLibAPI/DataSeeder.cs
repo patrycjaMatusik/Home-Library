@@ -42,6 +42,12 @@ namespace HomeLibraryAPI
                     _dbContext.Multimedias.AddRange(multimedias);
                     _dbContext.SaveChanges();
                 }
+                if (!_dbContext.Users.Any())
+                {
+                    var users = GetUsers();
+                    _dbContext.Users.AddRange(users);
+                    _dbContext.SaveChanges();
+                }
             }
         }
 
@@ -180,6 +186,22 @@ namespace HomeLibraryAPI
                 }
             };
             return multimedias;
+        }
+
+        private IEnumerable<User> GetUsers()
+        {
+            var users = new List<User>
+            {
+                new User()
+                {
+                    Email = "testAdmin@test.com",
+                    FirstName = "Adam",
+                    LastName = "Kowalski",
+                    PasswordHash = "AQAAAAEAACcQAAAAEFRLThXW0P77npqOXYf6uc1ayXuN0GcHNW67jHVNPFRwd5A1Ni0yySoGKOkdiwDvGw==",
+                    RoleId = 3
+                }
+            };
+            return users;
         }
     }
 }
