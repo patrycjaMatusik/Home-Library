@@ -11,7 +11,7 @@ namespace HomeLibAPI.Controllers
 {
     [Route("api/account")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
 
@@ -21,6 +21,7 @@ namespace HomeLibAPI.Controllers
         }
 
         [HttpPost("register")]
+        [Authorize(Roles = "Admin")]
         public ActionResult RegisterUser([FromBody] RegisterUserDto dto)
         {
             _accountService.RegisterUser(dto);

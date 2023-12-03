@@ -79,3 +79,7 @@ C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\FluentValidation.DependencyInjec
 C:\Repos\HomeLibAPI\HomeLibAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\HomeLibAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Library\GetAll.cshtml.g.cs
+C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Library\GetById.cshtml.g.cs
+C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Library\Delete.cshtml.g.cs
+C:\Repos\HomeLibAPI\HomeLibAPI\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs

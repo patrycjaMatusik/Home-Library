@@ -12,7 +12,7 @@ namespace HomeLibAPI.Services
 {
     public interface ILibraryElementService
     {
-        List<LibraryElementDto> GetAll();
+        List<LibraryElementDto> GetAll(LibraryObjectQuery query);
         LibraryElementDto GetById(int id);
 
         int CreateBook(CreateBookDto dto);
@@ -92,11 +92,37 @@ namespace HomeLibAPI.Services
             return libraryElementsDto;
         }
 
-        public List<LibraryElementDto> GetAll()
+        public List<LibraryElementDto> GetAll(LibraryObjectQuery query)
         {
+            var querable = _dbContext.LibraryElement.AsQueryable();
 
-            var libraryElements = _dbContext
-                .LibraryElement
+            if (query.LibraryObjectType != null)
+            {
+                switch (query.LibraryObjectType)
+                {
+                    case "Book": querable = querable.OfType<Book>();
+                        break;
+                    case "Magazine": querable = querable.OfType<Magazine>();
+                        break;
+                    case "Multimedia" : querable = querable.OfType<Multimedia>();
+                        break;
+                }
+            }
+
+            if (query.AuthorId > 0)
+            {
+                querable = querable.Where(le => le.AuthorId == query.AuthorId);
+            }
+            if (query.PublisherId > 0)
+            {
+                querable = querable.Where(le => le.PublisherId == query.PublisherId);
+            }
+            if (query.KeywordId > 0)
+            {
+                querable = querable.Where(le => le.Keywords.Any(k=> k.Id == query.KeywordId));
+            }
+
+            var libraryElements = querable
                 .Include(le => le.Author)
                 .Include(le => le.Publisher)
                 .Include(le => le.Keywords)
